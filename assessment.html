@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壓力指數測量表</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .options {
+            display: flex;
+            gap: 20px;
+        }
+        .options input {
+            margin-right: 8px;
+        }
+        .submit-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .submit-button button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-button button:hover {
+            background-color: #45a049;
+        }
+        @media (max-width: 600px) {
+            .options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>你最近壓力很大嗎? 壓力指數測量表</h1>
+        <form id="stressForm">
+            <!-- 問題 1 -->
+            <div class="question">
+                <label>1. 您最近是否經常感到緊張，覺得工作總是做不完？</label>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="是" required> 是</label>
+                    <label><input type="radio" name="q1" value="否"> 否</label>
+                </div>
+            </div>
+            <!-- 問題 2 -->
+            <div class="question">
+                <label>2. 您最近是否老是睡不好，常常失眠或睡眠品質不佳？</label>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="是" required> 是</label>
+                    <label><input type="radio" name="q2" value="否"> 否</label>
+                </div>
+            </div>
+            <!-- 問題 3 -->
+            <div class="question">
+                <label>3. 您最近是否經常有情緒低落、焦慮、煩躁的情況？</label>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="是" required> 是</label>
+                    <label><input type="radio" name="q3" value="否"> 否</label>
+                </div>
+            </div>
+            <!-- 問題 4 -->
+            <div class="question">
+                <label>4. 您最近是否經常忘東忘西、變得很健忘？</label>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="是" required> 是</label>
+                    <label><input type="radio" name="q4" value="否"> 否</label>
+                </div>
+            </div>
+            <!-- 問題 5 -->
+            <div class="question">
+                <label>5. 您最近是否經常覺得胃口不好？或胃口特別好？</label>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="是" required> 是</label>
+                    <label><input type="radio" name="q5" value="否"> 否</label>
+                </div>
+            </div>
+            <!-- 問題 6 -->
+            <div class="question">
+                <label>6. 您最近六個月內是否生病不只一次了？</label>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="是" required> 是</label>
+                    <label><input type="radio" name="q6" value="否"> 否</label>
+                </div>
+            </div>
+            <!-- 問題 7 -->
+            <div class="question">
+                <label>7. 您最近是否經常覺得很累，假日都在睡覺？</label>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="是" required> 是</label>
+                    <label><input type="radio" name="q7" value="否"> 否</label>
+                </div>
+            </div>
+            <!-- 問題 8 -->
+            <div class="question">
+                <label>8. 您最近是否經常覺得頭痛、腰痠背痛？</label>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="是" required> 是</label>
+                    <label><input type="radio" name="q8" value="否"> 否</label>
+                </div>
+            </div>
+            <!-- 問題 9 -->
+            <div class="question">
+                <label>9. 您最近是否經常意見和別人不同？</label>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="是" required> 是</label>
+                    <label><input type="radio" name="q9" value="否"> 否</label>
+                </div>
+            </div>
+            <!-- 問題 10 -->
+            <div class="question">
+                <label>10. 您最近是否注意力經常難以集中？</label>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="是" required> 是</label>
+                    <label><input type="radio" name="q10" value="否"> 否</label>
+                </div>
+            </div>
+            <!-- 問題 11 -->
+            <div class="question">
+                <label>11. 您最近是否經常覺得未來充滿不確定感？恐懼感？</label>
+                <div class="options">
+                    <label><input type="radio" name="q11" value="是" required> 是</label>
+                    <label><input type="radio" name="q11" value="否"> 否</label>
+                </div>
+            </div>
+            <!-- 問題 12 -->
+            <div class="question">
+                <label>12. 有人說您最近氣色不太好嗎？</label>
+                <div class="options">
+                    <label><input type="radio" name="q12" value="是" required> 是</label>
+                    <label><input type="radio" name="q12" value="否"> 否</label>
+                </div>
+            </div>
+            <!-- 提交按鈕 -->
+            <div class="submit-button">
+                <button type="submit">提交</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('stressForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let yesCount = 0;
+            for(let i=1; i<=12; i++) {
+                let answer = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if(answer === '是') yesCount++;
+            }
+            // 將結果存儲在 localStorage
+            localStorage.setItem('stressCount', yesCount);
+            // 重定向到 result.html
+            window.location.href = 'result.html';
+        });
+    </script>
+</body>
+</html>

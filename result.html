@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壓力指數結果</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff3cd;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #ffeeba;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #856404;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #856404;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .buttons a, .buttons button {
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .buttons a:hover, .buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>您的壓力指數結果</h1>
+        <div class="result" id="resultText">
+            <!-- 結果將由 JavaScript 填充 -->
+        </div>
+        <div class="buttons">
+            <a href="assessment.html">重新測試</a>
+            <a href="index.html">返回首頁</a>
+        </div>
+    </div>
+
+    <script>
+        // 從 localStorage 中讀取壓力指數
+        const yesCount = parseInt(localStorage.getItem('stressCount'));
+
+        let resultMessage = '';
+
+        if(isNaN(yesCount)) {
+            resultMessage = '無法獲取您的壓力指數。請先完成測試。';
+        } else if(yesCount <= 3) {
+            resultMessage = '您的壓力指數還在能負荷的範圍。';
+        } else if(yesCount <=5) {
+            resultMessage = '壓力滿困擾您，雖能勉強應付，但必需認真學習壓力管理了，同時多與良師益友聊一聊。';
+        } else if(yesCount <=8) {
+            resultMessage = '您的壓力很大，趕快去看心理衛生專業人員，接受系統性的心理治療。';
+        } else {
+            resultMessage = '您的壓力已很嚴重，應該看精神專科醫師，依醫師處方用藥物治療與心理治療，幫忙您的生活趕快恢復正常軌道。';
+        }
+
+        document.getElementById('resultText').innerText = resultMessage;
+
+        // 清除 localStorage 中的壓力指數（可選）
+        // localStorage.removeItem('stressCount');
+    </script>
+</body>
+</html>
